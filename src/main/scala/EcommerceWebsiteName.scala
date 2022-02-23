@@ -1,8 +1,5 @@
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.functions.udf
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.expressions.UserDefinedFunction
 
 class EcommerceWebsiteName {
   def randomWebNames(): Unit = {

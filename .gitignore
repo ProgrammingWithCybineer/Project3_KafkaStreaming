@@ -11,3 +11,6 @@ target/
 .metals/
 .bloop/
 .scalafmt.conf
+README.md
+*.sbt
+.DS_Store

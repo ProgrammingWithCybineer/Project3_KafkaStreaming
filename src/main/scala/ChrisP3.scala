@@ -4,10 +4,21 @@ import org.apache.spark.sql.functions.udf
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.expressions.UserDefinedFunction
 
-object chrisP3 {
+object ChrisP3 {
 
   def main(args: Array[String]): Unit = {
-    var grab = new EcommerceInfo
-    grab.webNames
+
+    grabWebNames()
+    grabTransId()
+
+    def grabWebNames() {
+      var grab = new EcommerceWebsiteName
+      grab.randomWebNames
+    }
+
+    def grabTransId() {
+      var grab = new PaymentTransId
+      grab.randomPymtTransId
+    }
   }
 }

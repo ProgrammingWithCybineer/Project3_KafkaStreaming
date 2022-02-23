@@ -4,8 +4,8 @@ import org.apache.spark.sql.functions.udf
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.expressions.UserDefinedFunction
 
-class EcommerceInfo {
-  def webNames(): Unit = {
+class PaymentTransId {
+  def randomPymtTransId(): Unit = {
     val spark: SparkSession = SparkSession.builder
       .appName("SparkVSCode")
       .config("spark.master", "local")
@@ -17,7 +17,7 @@ class EcommerceInfo {
     val df = spark.read
       .format("com.databricks.spark.csv")
       .option("header", false)
-      .load("input/ecommerce_website_names.csv")
+      .load("input/payment_txn_id.csv")
 
     df.createOrReplaceTempView("df")
     val result = spark.sql("SELECT * FROM df ORDER BY RAND() LIMIT 1")

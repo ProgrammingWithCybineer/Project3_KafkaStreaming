@@ -32,26 +32,40 @@ var counter=0
    def Output() : String = {
  
         
-            if (counter%4==3||counter%4==1||counter%4==2)
+            if (counter%5==1||counter%5==2||counter%5==3||counter%5==4)
                 {pSuccess="Y"}
-            if (counter%4==0)
+            if (counter%5==0)
                 {pSuccess="N"}
             if (pSuccess=="Y")
-                {reason="Null"}
-            if (pSuccess=="N" &&( counter%20==1||counter%20==6||counter%20==11||counter%20==16||counter%20==5))
+                {reason=null}
+            if (pSuccess=="N" &&( counter%35==5))
                 {reason="InsuffientFunds"}
-            if (pSuccess=="N" &&( counter%20==2||counter%20==7||counter%20==12||counter%20==17||counter%20==10))
+            if (pSuccess=="N" &&( counter%35==10))
                 {reason="PurchaseTooLarge"}
-            if (pSuccess=="N" &&( counter%20==3||counter%20==8||counter%20==13||counter%20==18||counter%20==15))
+            if (pSuccess=="N" &&( counter%35==15))
                 {reason="IncorrectInformation"}
-            if (pSuccess=="N" &&( counter%20==4||counter%20==9||counter%20==14||counter%20==19))
+            if (pSuccess=="N" &&( counter%35==30))
                 {reason="AccountClosed"}
-            if (pSuccess=="N" &&( counter%20==0))
-                {reason="Null"}
+            if (pSuccess=="N" && (counter%35==25 ))
+                {reason="ExceededDailyLimit"}  
+            if (pSuccess=="N" &&( counter%35==20 || counter%35==0))
+                {reason=" "}
         
       
             counter=counter+1
-        var outputString=pSuccess + "," + reason + ","
+        var outputString=pSuccess + "," + reason 
+      
+      /* for (i<-0 to (outputString.length-1))
+       {
+        if (i!=outputString.length-1)
+           {outputString2+=outputString(i)}
+
+        else {outputString2+=""}
+       */ //}
+    
+ 
+
+
         return outputString
 
     }

@@ -5,7 +5,7 @@ Put simply my code uses two classes, two methods and returns two strings.
 - EcommerceWebsiteName
 - PaymentTransId
 
-### Method Names
+### Methods
 - grabWebNames()
 - grabTransId()
 

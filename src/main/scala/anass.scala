@@ -4,7 +4,7 @@ import scala.util.Random
 class QuntityTypeOr {
 
     def payTy(): String={
-        val paymentTyp = Set("card", "Internet Banking", "UPI", "Wallet")
+        val paymentTyp = Set("card", "Internet Banking", "UPI", "Wallet", "Null")
         var rand = new Random()
         var pyT = paymentTyp.toList(rand.nextInt(paymentTyp.size))
         return pyT 

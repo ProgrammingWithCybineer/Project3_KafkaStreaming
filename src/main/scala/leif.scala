@@ -38,9 +38,9 @@ var counter=0
                 {pSuccess="N"}
             if (pSuccess=="Y")
                 {reason=null}
-            if (pSuccess=="N" &&( counter%35==5))
+            if (pSuccess=="N" &&( counter%35==5 ||counter%35==20))
                 {reason="InsuffientFunds"}
-            if (pSuccess=="N" &&( counter%35==10))
+            if (pSuccess=="N" &&( counter%35==10|| counter%35==0))
                 {reason="PurchaseTooLarge"}
             if (pSuccess=="N" &&( counter%35==15))
                 {reason="IncorrectInformation"}
@@ -48,9 +48,7 @@ var counter=0
                 {reason="AccountClosed"}
             if (pSuccess=="N" && (counter%35==25 ))
                 {reason="ExceededDailyLimit"}  
-            if (pSuccess=="N" &&( counter%35==20 || counter%35==0))
-                {reason=" "}
-        
+           
       
             counter=counter+1
         var outputString=pSuccess + "," + reason 

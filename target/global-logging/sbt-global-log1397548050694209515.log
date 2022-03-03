@@ -1,0 +1,19 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(4728afd6-5e79-4c2c-bbc2-d360494ea13d), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 11 Scala sources to C:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\target\scala-2.11\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:65:28: missing argument list for method Price in class DateTimeGen[0m
+[0m[[0m[31merror[0m] [0m[0mUnapplied methods are only converted to functions when a function type is expected.[0m
+[0m[[0m[31merror[0m] [0m[0mYou can make this conversion explicit by writing `Price _` or `Price(_)` instead of `Price`.[0m
+[0m[[0m[31merror[0m] [0m[0m        var result9 = date.Price[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:77:21: not found: value result1[0m
+[0m[[0m[31merror[0m] [0m[0m       allStrings = result1 + result2 + result3 + result4 +result5 + result6 + result7 + result8 + result9 + result10 + result11 + result12 + result13 + result14;[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:77:31: not found: value result2[0m
+[0m[[0m[31merror[0m] [0m[0m       allStrings = result1 + result2 + result3 + result4 +result5 + result6 + result7 + result8 + result9 + result10 + result11 + result12 + result13 + result14;[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 9 s, completed Mar 3, 2022 11:02:28 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

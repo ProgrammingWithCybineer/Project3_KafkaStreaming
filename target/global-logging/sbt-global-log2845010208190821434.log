@@ -1,0 +1,20 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(14d0bc81-d154-4d5b-9395-48936f4f576a), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 11 Scala sources to C:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\target\scala-2.11\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:36:23: not found: type DateTimeGen[0m
+[0m[[0m[31merror[0m] [0m[0m       var date = new DateTimeGen[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:57:32: not found: value digits[0m
+[0m[[0m[31merror[0m] [0m[0m        var result1 = id.idGen(digits)[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:58:32: not found: value cat[0m
+[0m[[0m[31merror[0m] [0m[0m        var result2 = id.idGen(cat)[0m
+[0m[[0m[31merror[0m] [0m[0m                               ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\RandomName.scala:1:26: object shaded is not a member of package org.apache.hadoop[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.hadoop.shaded.org.eclipse.jetty.websocket.common.frames.DataFrame // Windows users must comment this line out[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 9 s, completed Mar 3, 2022 10:56:38 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:66:31: not found: value result4[0m
+[0m[[0m[31merror[0m] [0m[0m       allStrings = result3 + result4 +result5 + result6 + result7 + result8 + result11 + result12 + result13 + result14;[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

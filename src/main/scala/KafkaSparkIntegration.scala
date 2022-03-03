@@ -6,6 +6,7 @@ import java.sql.Connection
 
 object KafkaSparkIntegration {
     def main(args:Array[String]): Unit = {
+         var catArray = Array("Electronics", "Office Supplies", "Books", "Home Goods", "Appliances", "Beauty and Health Goods")
   
         val spark = SparkSession
             .builder
@@ -19,10 +20,10 @@ object KafkaSparkIntegration {
         // Create object
        var a = true
        var le = new leif
-       var ana = new anass
+       var ana = new QuntityTypeOr
        var my = new myclass
        var loc = new Location
-    //    var date = new DateTimeGen
+    
        var chris1 = new EcommerceWebsiteName
        var chris2 = new PaymentTransId
        var id = new ID
@@ -33,9 +34,17 @@ object KafkaSparkIntegration {
       // create while loop 
         while (a == true) 
         {
+
         Thread.sleep(200)
 
-        
+        var dt = DateTimeGen.dateTimeGen()
+            Thread.sleep(500)
+            var r = scala.util.Random
+            var cat = catArray(r.nextInt(5))
+          
+           
+            var myStr = s"${DateTimeGen.Price(cat)}, $dt"
+
         
 
         
@@ -43,19 +52,19 @@ object KafkaSparkIntegration {
         // var result2 = my.Greetings
         
         
-        // var result1 = id.idGen(digits)
-        // var result2 = id.idGen(cat)
-        var result3 = proID.getNum
-        // var result4 = proName.getName
-        var result5 = null
-        var result6 = null
-        var result7 = null
-        var result8 = null
+        var result1 = id.idGen()
+        // var result2 = id.idGen()
+         var result3 = proID.getNum
+         var result4 = proName.getName
+        // var result5 = null
+        // var result6 = null
+        // var result7 = ana.payTy()
+        // var result8 = ana.quantityOrder()
         // var result9 = date.Price(cat)
-        // var result10 = date.dateTimeGen
-        var result11 = loc.getLocation           // for country and city
-        var result12 = chris1.randomWebNames
-        var result13 = chris2.randomPymtTransId
+         var result10 = myStr
+        // var result11 = loc.getLocation           // for country and city
+        // var result12 = chris1.randomWebNames
+        // var result13 = chris2.randomPymtTransId
         var result14 = le.Output                // for payt trns success and failure reason
         
 
@@ -63,7 +72,7 @@ object KafkaSparkIntegration {
         var allStrings = ""
 
        
-       allStrings = result3 + result5 + result6 + result7 + result8 + result11 + result12 + result13 + result14;
+       allStrings = result1 + result3 + result4 + result10 + result14;
         
 
         val rdd = spark.sparkContext.parallelize(Array(("gabriel", allStrings)))

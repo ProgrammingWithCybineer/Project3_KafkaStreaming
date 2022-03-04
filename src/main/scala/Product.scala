@@ -109,8 +109,6 @@ class Product {
     oneProduct=oneProduct.filterNot(x => x == '(' || x == ')' || x == '[' || x == ']')
     
     b=b+1
-    return oneProduct
-    
+    return oneProduct 
   }
-
 }

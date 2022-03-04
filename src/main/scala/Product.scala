@@ -6,6 +6,7 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.sql.SQLContext
+import scala.util._
 
 
 class Product {
@@ -19,7 +20,7 @@ class Product {
         connection = DriverManager.getConnection(url, username, password)
         var statement = connection.createStatement()
         var statement1 = connection.createStatement() 
-        */
+        
         System.setProperty("hadoop.home.dir", "C:\\hadoop\\")  //for windows
         val spark=SparkSession
             .builder
@@ -28,7 +29,7 @@ class Product {
             .getOrCreate()
             spark.sparkContext.setLogLevel("WARN")
 
-     /*   
+        
   // gets item
     def productName(c: Int): String = {
          val userRes = statement.executeQuery("Select item from ProductItem where itemID = "+c+";")
@@ -80,8 +81,8 @@ class Product {
         file.close()
         connection.close()
      } 
-     */
-     // pulls random item from list as ID, item, category string
+    
+     // pulls random item from list as ID, item, category string using Spark- Outdated Method
      def productInfo(): String =  {
         val csvFile = spark.read.format("csv")
             .option("mode", "FAILFAST")
@@ -94,4 +95,22 @@ class Product {
         var finalproduct = result2.filterNot(x => x == '(' || x == ')' || x == '[' || x == ']')
         return finalproduct
      }
+     */
+
+ def newProduct(): String = {
+    var b = 0
+    var arr1 = io.Source
+        .fromFile("src/main/input/ProductInfo.csv")
+        .getLines()
+        .map(_.split(",").map(_.trim))
+        .toArray
+    var oneProduct=""  
+    oneProduct =(arr1(b)(0))+"," +(arr1(b)(1))+"," +(arr1(b)(2))
+    oneProduct=oneProduct.filterNot(x => x == '(' || x == ')' || x == '[' || x == ']')
+    
+    b=b+1
+    return oneProduct
+    
+  }
+
 }

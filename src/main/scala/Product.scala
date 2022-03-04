@@ -98,7 +98,8 @@ class Product {
      */
 
  def newProduct(): String = {
-    var b = 0
+    var pro = new scala.util.Random
+    var b = pro.nextInt(114)
     var arr1 = io.Source
         .fromFile("src/main/input/ProductInfo.csv")
         .getLines()
@@ -107,8 +108,6 @@ class Product {
     var oneProduct=""  
     oneProduct =(arr1(b)(0))+"," +(arr1(b)(1))+"," +(arr1(b)(2))
     oneProduct=oneProduct.filterNot(x => x == '(' || x == ')' || x == '[' || x == ']')
-    
-    b=b+1
     return oneProduct 
   }
 }

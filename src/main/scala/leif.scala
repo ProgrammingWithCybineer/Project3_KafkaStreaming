@@ -13,7 +13,7 @@ var counter=0
             if (counter%5==0)
                 {pSuccess="N"}
             if (pSuccess=="Y")
-                {reason=null}
+                {reason= "null"}
             if (pSuccess=="N" &&( counter%35==5 ||counter%35==20))
                 {reason="InsuffientFunds"}
             if (pSuccess=="N" &&( counter%35==10|| counter%35==0))

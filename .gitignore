@@ -6,3 +6,12 @@
 input/.DS_Store
 *project/
 src/main/.DS_Store
+metastore_db/
+.bsp
+project/
+derby.log
+target/
+.vscode/
+.metals/
+.bloop/
+

@@ -1,0 +1,8 @@
+*target/
+.DS_Store
+.bloop/
+.metals/
+.scalafmt.conf
+input/.DS_Store
+*project/
+src/main/.DS_Store

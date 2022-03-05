@@ -2,17 +2,13 @@ object ChrisP3 {
 
   def main(args: Array[String]): Unit = {
 
-    grabWebNames()
-    grabTransId()
+    var grab = new EcommerceWebsiteName
 
-    def grabWebNames() {
-      var grab = new EcommerceWebsiteName
-      grab.randomWebNames
-    }
+    grab.randomWebsiteName()
+    println(grab.randomWebsiteName())
 
-    def grabTransId() {
-      var grab = new PaymentTransId
-      grab.randomPymtTransId
-    }
+    grab.randomTaxId()
+    println(grab.randomTaxId())
+
   }
 }

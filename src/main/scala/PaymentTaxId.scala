@@ -1,7 +1,7 @@
 import scala.io.Source
 import scala.util._
 
-class EcommerceWebsiteName {
+class PaymentTaxId {
 
   var r = new scala.util.Random
   var randomIndex = r.nextInt(10000)

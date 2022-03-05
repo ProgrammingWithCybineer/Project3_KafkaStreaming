@@ -3,22 +3,26 @@ import org.apache.spark.sql.SparkSession
 
 class PaymentTransId {
   def randomPymtTransId(): String = {
-    var arr3 = scala.io.Source
-      .fromFile("src/main/input/payment_txn_id.csv")
-      .getLines()
-      // .map(_.split(",").map(_.trim))
-      .toArray
+    val spark: SparkSession = SparkSession.builder
+      .appName("SparkVSCode")
+      .config("spark.master", "local")
+      .getOrCreate()
 
+    spark.sparkContext.setLogLevel("ERROR")
+    import spark.implicits._
 
-    var onePaymentId=""
-    var randomNum = new scala.util.Random
-    var randomRow = arr3(randomNum.nextInt(1000))
+    val df = spark.read
+      .format("com.databricks.spark.csv")
+      .option("header", false)
+      .load("input/payment_txn_id.csv")
 
-        var paymentId = randomRow.split(",")
+    df.createOrReplaceTempView("df")
+    val result =
+      spark.sql("SELECT * FROM df ORDER BY RAND() LIMIT 1").collect.mkString
 
-        var onePayment = paymentId(0)
-  
-    return onePayment
+    var pymt_txn_id = result.drop(1).dropRight(1)
+
+    return pymt_txn_id
 
   }
 

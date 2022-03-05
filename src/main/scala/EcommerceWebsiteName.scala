@@ -1,24 +1,29 @@
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.SparkSession
-import scala.io.Source
 
 class EcommerceWebsiteName {
-  def webNames(): String = {
-   var arr = scala.io.Source
-      .fromFile("src/main/input/ecommerce_website_names.csv")
-      .getLines()
-      // .map(_.split(",").map(_.trim))
-      .toArray
+  def randomWebNames(): String = {
+    val spark: SparkSession = SparkSession.builder
+      .appName("SparkVSCode")
+      .config("spark.master", "local")
+      .getOrCreate()
 
-    var oneSite=""
-    var randomNum = new scala.util.Random
-    var randomRow = arr(randomNum.nextInt(1000))
+    spark.sparkContext.setLogLevel("ERROR")
+    import spark.implicits._
 
-        var web = randomRow.split(",")
+    val df = spark.read
+      .format("com.databricks.spark.csv")
+      .option("header", false)
+      .load("input/ecommerce_website_names.csv")
 
-        var webName = web(0)
-   
-    return webName
+    df.createOrReplaceTempView("df")
+    val result =
+      spark.sql("SELECT * FROM df ORDER BY RAND() LIMIT 1").collect.mkString
+
+    var random_website_name = result.drop(1).dropRight(1)
+
+    return random_website_name
+
   }
 
 }

@@ -2,13 +2,55 @@ import java.util.Scanner
 import java.sql.Connection
 import java.sql.DriverManager
 import java.io.FileWriter
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
-import org.apache.spark.sql.SQLContext
+import scala.util._
+//import org.apache.spark.sql.SparkSession
+//import org.apache.spark.SparkContext
+//import org.apache.spark.SparkContext._
+//import org.apache.spark.sql.SQLContext
 
 
 class Product {
+var b=0
+
+
+ def newProduct(): String = {
+   var arr1 = io.Source
+      .fromFile("src/main/input/ProductInfo.csv")
+      .getLines()
+      .map(_.split(",").map(_.trim))
+      .toArray
+var oneProduct=""  
+oneProduct =(arr1(b)(0))+"," +(arr1(b)(1))+"," +(arr1(b)(2))
+oneProduct=oneProduct.filterNot(x => x == '(' || x == ')' || x == '[' || x == ']')
+    
+b=b+1
+    return oneProduct
+
+    
+
+  }
+
+ def randomName: String = {
+     
+var dataArray = io.Source
+            .fromFile("src/main/resources/surnames.csv")
+            .getLines()
+            .map(_.split(",").map(_.trim))
+            .toArray
+
+var dataArray1 = io.Source
+            .fromFile("src/main/resources/firstnames.csv")
+            .getLines()
+            .map(_.split(",").map(_.trim))
+            .toArray
+
+        var randomNum = new scala.util.Random
+
+        var randomName = dataArray1(randomNum.nextInt(10000))(0)+"," + dataArray(randomNum.nextInt(10000))(0) + ","
+
+        return randomName
+
+ }
  // **** globals variables and connections to SQL adjust -- uncomment line 14 through 21 *****
       /*  val driver = "com.mysql.jdbc.Driver"
         val url = "jdbc:mysql://localhost:3306/Products"
@@ -20,17 +62,17 @@ class Product {
         var statement = connection.createStatement()
         var statement1 = connection.createStatement() 
         */
-        System.setProperty("hadoop.home.dir", "C:\\hadoop\\")  //for windows
+     /*   System.setProperty("hadoop.home.dir", "C:\\hadoop\\")  //for windows
         val spark=SparkSession
             .builder
             .appName("sparkSQL")
             .master("local[*]")
             .getOrCreate()
             spark.sparkContext.setLogLevel("WARN")
-
-     /*   
+*/
+       
   // gets item
-    def productName(c: Int): String = {
+   /* def productName(c: Int): String = {
          val userRes = statement.executeQuery("Select item from ProductItem where itemID = "+c+";")
          var itemA = ""
          while (userRes.next()){
@@ -80,7 +122,7 @@ class Product {
         file.close()
         connection.close()
      } 
-     */
+     
      // pulls random item from list as ID, item, category string
      def productInfo(): String =  {
         val csvFile = spark.read.format("csv")
@@ -94,4 +136,5 @@ class Product {
         var finalproduct = result2.filterNot(x => x == '(' || x == ')' || x == '[' || x == ']')
         return finalproduct
      }
+     */
 }

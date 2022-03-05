@@ -10,6 +10,7 @@ libraryDependencies ++= Seq("org.apache.spark" % "spark-sql_2.11" % "2.2.0",
 
 libraryDependencies += "org.apache.spark" %% "spark-core" % "2.3.2"
 libraryDependencies += "org.apache.spark" %% "spark-hive" % "2.3.2"
+// libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.0" % "test"
 // libraryDependencies += "org.lz4" % "lz4-java" % "1.7.1"
 
 // lazy val excludeJpountz = ExclusionRule(organization = "net.jpountz.lz4", name = "lz4")

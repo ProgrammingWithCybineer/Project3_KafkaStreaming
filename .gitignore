@@ -1,11 +1,10 @@
-*target/
-.DS_Store
-.bloop/
-.metals/
-.scalafmt.conf
-input/.DS_Store
-*project/
-src/main/.DS_Store
+*.class
+*.log
+<<<<<<< HEAD
+*.class
+*.log
+=======
+>>>>>>> origin
 metastore_db/
 .bsp
 project/
@@ -14,4 +13,3 @@ target/
 .vscode/
 .metals/
 .bloop/
-

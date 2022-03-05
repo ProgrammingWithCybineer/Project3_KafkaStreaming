@@ -9,8 +9,6 @@ class QuntityTypeOr {
         var pyT = paymentTyp.toList(rand.nextInt(paymentTyp.size))
         return pyT 
         
-        
-
     }
 
     def quantityOrder (): Int={

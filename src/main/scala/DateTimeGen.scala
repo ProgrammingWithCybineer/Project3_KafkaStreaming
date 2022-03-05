@@ -1,7 +1,7 @@
 object DateTimeGen {
    
 
-    // var catArray = Array("Electronics", "Office Supplies", "Books", "Home Goods", "Appliances", "Beauty and Health Goods")
+    var catArray = Array("Electronics", "Office Supplies", "Books", "Home Goods", "Appliances", "Beauty and Health Goods")
     
      def Price(cat:String): String = {
        var r = scala.util.Random

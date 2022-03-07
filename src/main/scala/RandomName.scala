@@ -4,13 +4,15 @@ class RandomName {
 def randomName: String = {
      
     var dataArray = scala.io.Source
-            .fromFile("src/main/resources/surnames.csv")
+            // .fromFile("src/main/resources/surnames.csv")           // user can use path with EC2 
+            .fromFile("/home/ec2-user/G2Folder/input/surnames.csv")   // you change this path into your EC2 path   
             .getLines()
             // .map(_.split(",").map(_.trim))
             .toArray
 
     var dataArray1 = scala.io.Source
-            .fromFile("src/main/resources/firstnames.csv")
+            // .fromFile("src/main/resources/firstnames.csv")
+            .fromFile("/home/ec2-user/G2Folder/input/firstnames.csv")
             .getLines()
             // .map(_.split(",").map(_.trim))
             .toArray

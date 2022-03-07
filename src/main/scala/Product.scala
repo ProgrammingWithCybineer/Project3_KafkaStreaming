@@ -12,12 +12,13 @@ var randomNum = new scala.util.Random
 
  def newProduct(): String = {
    var arr1 = scala.io.Source
-      .fromFile("src/main/input/ProductInfo.csv")
+      // .fromFile("src/main/input/ProductInfo.csv")
+      .fromFile("/home/ec2-user/G2Folder/input/ProductInfo.csv")
       .getLines()
       // .map(_.split(",").map(_.trim))
       .toArray
     var oneProduct=""  
-      oneProduct = arr1(randomNum.nextInt(100))
+      oneProduct = arr1(randomNum.nextInt(114))
 
         var firstProd = oneProduct.split(",")
 

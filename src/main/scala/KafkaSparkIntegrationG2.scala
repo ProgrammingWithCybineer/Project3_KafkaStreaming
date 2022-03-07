@@ -6,7 +6,7 @@ import java.sql.Connection
 import scala.io.Source
 import scala.collection.mutable._
 
-object KafkaSparkIntegration {
+object KafkaSparkIntegrationG2 {
 
     var arr = new ArrayBuffer [Array[String]]()
 
@@ -37,10 +37,14 @@ object KafkaSparkIntegration {
        var proc = new Product
        var proName = new RandomName                           
 
-
+  
+    
       // create while loop 
         while (a == true) 
         {
+            // to create random bad data
+        var counter1 = new scala.util.Random
+        var counter = counter1.nextInt(100)
 
         Thread.sleep(200)
 
@@ -67,14 +71,29 @@ object KafkaSparkIntegration {
         var result11 = loc.getPlace                          // Selena
         var result12 = chris1.webNames                        // Chris
         var result13 = chris2.randomPymtTransId                // Chris
+        // if counter
         var result14 = le.Output                                // Leif
         
 
         // create variable to concatenate all the result in string
+
         var allStrings = ""
 
+       if (counter == 10){
+           allStrings = result1 + result3 + "," + "null" + "," + result5 + "," + result7 + "," + result8 + "," + result9 + "," + result11 + "," + result12 + "," + result13 + "," + result14;
+           
+       } else if (counter == 20){
+           allStrings = result1 + result3 + "," + result4 + "," + result5 + "," + "null" + "," + result8 + "," + result9 + "," + result11 + "," + result12 + "," + result13 + "," + result14;
+       } else if(counter == 30){
+           allStrings = result1 + result3 + "," + result4 + "," + result5 + "," + result7 + "," + result8 + "," + "null" + "," + result11 + "," + result12 + "," + result13 + "," + result14;
+       } else if (counter == 40){
+           allStrings = result1 + result3 + "," + result4 + "," + result5 + "," + result7 + "," + result8 + "," + result9 + "," + result11 + "," + "null" + "," + result13 + "," + result14;
+       } else if (counter == 50){
+           allStrings = result1 + result3 + "," + result4 + "," + result5 + "," + result7 + "," + result8 + "," + result9 + "," + result11 + "," + result12 + "," + "null" + "," + result14;
+       } else {
        
         allStrings = result1 + result3 + "," + result4 + "," + result5 + "," + result7 + "," + result8 + "," + result9 + "," + result11 + "," + result12 + "," + result13 + "," + result14;
+       }
         
 
         val rdd = spark.sparkContext.parallelize(Array(("gabriel", allStrings)))

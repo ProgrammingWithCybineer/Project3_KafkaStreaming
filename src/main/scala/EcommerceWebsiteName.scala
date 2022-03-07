@@ -5,7 +5,8 @@ import scala.io.Source
 class EcommerceWebsiteName {
   def webNames(): String = {
    var arr = scala.io.Source
-      .fromFile("src/main/input/ecommerce_website_names.csv")
+      // .fromFile("src/main/input/ecommerce_website_names.csv")
+      .fromFile("/home/ec2-user/G2Folder/input/ecommerce_website_names.csv")
       .getLines()
       // .map(_.split(",").map(_.trim))
       .toArray

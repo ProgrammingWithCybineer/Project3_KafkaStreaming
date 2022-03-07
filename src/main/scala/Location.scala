@@ -10,7 +10,9 @@ class Location {
   def getPlace(): String = {
 
   var locations = scala.io.Source
-      .fromFile("src/main/datasets/worldcities.csv")
+      // .fromFile("src/main/datasets/worldcities.csv")
+      .fromFile("/home/ec2-user/G2Folder/input/worldcities.csv")
+
       .getLines()
       // .map(_.split(",").map(_.trim))
       .toArray

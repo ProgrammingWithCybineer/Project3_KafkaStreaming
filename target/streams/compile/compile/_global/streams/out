@@ -1,4 +1,25 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:33:24: not found: type Amina[0m
-[0m[[0m[31merror[0m] [0m[0m       var amina = new Amina[0m
+[0m[[0m[31merror[0m] [0m[0mD:\project_3\Project3_KafkaStreaming\ConsumerEX.scala:3:25: object streaming is not a member of package org.apache.spark[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.streaming.kafka.KafkaUtils[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\project_3\Project3_KafkaStreaming\ConsumerEX.scala:4:25: object streaming is not a member of package org.apache.spark[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.streaming.{Seconds, StreamingContext}[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\project_3\Project3_KafkaStreaming\ConsumerEX.scala:5:25: object streaming is not a member of package org.apache.spark[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.streaming._[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\project_3\Project3_KafkaStreaming\ConsumerEX.scala:6:25: object streaming is not a member of package org.apache.spark[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.streaming.kafka[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\project_3\Project3_KafkaStreaming\ConsumerEX.scala:7:25: object streaming is not a member of package org.apache.spark[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.streaming.StreamingContext._[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\project_3\Project3_KafkaStreaming\ConsumerEX.scala:31:19: not found: type StreamingContext[0m
+[0m[[0m[31merror[0m] [0m[0m    val ssc = new StreamingContext(conf, Seconds(20))[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\project_3\Project3_KafkaStreaming\ConsumerEX.scala:31:42: not found: value Seconds[0m
+[0m[[0m[31merror[0m] [0m[0m    val ssc = new StreamingContext(conf, Seconds(20))[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\project_3\Project3_KafkaStreaming\ConsumerEX.scala:36:24: not found: value KafkaUtils[0m
+[0m[[0m[31merror[0m] [0m[0m  {  val kafkaStream = KafkaUtils.createStream(ssc, "localhost:2181","spark-streaming-consumer-group", Map("mytest" -> 5) )[0m
 [0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m8 errors found[0m

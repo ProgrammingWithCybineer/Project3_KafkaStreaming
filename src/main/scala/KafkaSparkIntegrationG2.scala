@@ -40,6 +40,7 @@ object KafkaSparkIntegrationG2 {
   
     
       // create while loop 
+      var counter2 = 0
         while (a == true) 
         {
             // to create random bad data
@@ -56,10 +57,11 @@ object KafkaSparkIntegrationG2 {
            
             var myStr = s"${DateTimeGen.Price(cat)}, $dt"
 
-        
 
-        
-        
+       
+
+        // for(i <- 0 to 500){
+
         // call the method by variable
         var result1 = id.idGen()                              // Taiy
         var result3 = proName.getNum                         // Nick
@@ -94,9 +96,16 @@ object KafkaSparkIntegrationG2 {
        
         allStrings = result1 + result3 + "," + result4 + "," + result5 + "," + result7 + "," + result8 + "," + result9 + "," + result11 + "," + result12 + "," + result13 + "," + result14;
        }
-        
 
-        val rdd = spark.sparkContext.parallelize(Array(("gabriel", allStrings)))
+
+       
+    
+
+    
+
+
+        
+        val rdd = spark.sparkContext.parallelize(Array((counter2, allStrings)))
         val df = rdd.toDF("name", "output")
 
         df.selectExpr("CAST(name AS String) AS key", "CAST(output AS String) AS value")
@@ -106,11 +115,13 @@ object KafkaSparkIntegrationG2 {
             .option("kafka.bootstrap.servers","localhost:9092")
             .option("checkpointLocation", "/root/week11/KafkaSparkIntegration")     // change at your location
             .save()
-
+        counter2 += 1
      }
      
      
 
         spark.close()
+
+        
     }
 }

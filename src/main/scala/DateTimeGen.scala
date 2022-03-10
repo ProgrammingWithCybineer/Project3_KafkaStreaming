@@ -1,4 +1,5 @@
 object DateTimeGen {
+/*
 
     var catArray = Array("Electronics", "Office Supplies", "Books", "Home Goods", "Appliances", "Beauty and Health Goods")
     
@@ -42,5 +43,4 @@ object DateTimeGen {
         return _date
    }
   
-}
-
+*/

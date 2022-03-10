@@ -1,41 +1,47 @@
-// import org.apache.hadoop.shaded.org.eclipse.jetty.websocket.common.frames.DataFrame // Windows users must comment this line out
-import org.apache.spark.sql.SparkSession
-
+import scala.collection.mutable._
 class RandomName {
+  private var id = 0
+def randomName: String = {
+     
+    var dataArray = scala.io.Source
+            .fromFile("src/main/resources/surnames.csv")
+            .getLines()
+            // .map(_.split(",").map(_.trim))
+            .toArray
 
-    def getName(): String = {
-        val spark = SparkSession.builder().appName("RandomName").config("spark.master", "local").config("spark.eventLog.enabled", "false").getOrCreate()
-        spark.sparkContext.setLogLevel("WARN")
+    var dataArray1 = scala.io.Source
+            .fromFile("src/main/resources/firstnames.csv")
+            .getLines()
+            // .map(_.split(",").map(_.trim))
+            .toArray
 
-        val df1 = spark
-            .read
-            .options(Map("inferSchema" -> "true", "header" -> "true"))
-            .csv("resources/firstnames.csv")
-            .withColumnRenamed("John", "first_names")
-            .createOrReplaceTempView("names")
+    var randomNum = new scala.util.Random
 
-        var randomName = spark.sql("SELECT first_names FROM names ORDER BY RAND() LIMIT 1").collect.mkString(",")
 
-        var formattedName = randomName.filterNot(x => x == '[' || x == ']')
+    var randomRow = dataArray1(randomNum.nextInt(1000))
 
-        val df2 = spark
-            .read
-            .options(Map("inferSchema" -> "true", "header" -> "true"))
-            .csv("resources/surnames.csv")
-            .createOrReplaceTempView("surnames")
+        var firstNameArray = randomRow.split(",")
 
-        var randomSurname = spark.sql("SELECT name FROM surnames ORDER BY RAND() LIMIT 1").collect.mkString(",")
+        var firstName = firstNameArray(0)
 
-        spark.stop()
 
-        var surnameNoBrackets = randomSurname.filterNot(x => x == '[' || x == ']')
+      var randomRow1 = dataArray(randomNum.nextInt(1000))
 
-        var formattedSurname = surnameNoBrackets.charAt(0) + surnameNoBrackets.substring(1, surnameNoBrackets.length - 1).toLowerCase()
+        var lastNameArray = randomRow1.split(",")
 
-        var nameCombo = (s"$formattedName $formattedSurname")
+        var lastName = lastNameArray(0)
 
-        return nameCombo
+        var fullName = firstName + " " + lastName
 
+
+      return fullName
+    // return randomName
+ }
+ def getNum(): Int = {
+      var randomNum = scala.util.Random
+      id = randomNum.nextInt(15000)
+      return id
     }
-
 }
+
+

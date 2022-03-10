@@ -1,4 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\wakog\Desktop\RevaNote\week10\KafkaSparkIntegration\src\main\scala\KafkaSparkIntegration.scala:33:24: not found: type Amina[0m
-[0m[[0m[31merror[0m] [0m[0m       var amina = new Amina[0m
-[0m[[0m[31merror[0m] [0m[0m                       ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m

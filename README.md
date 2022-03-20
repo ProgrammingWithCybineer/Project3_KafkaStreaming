@@ -16,13 +16,13 @@ This project will be used to create the followings:
   *	programmingwithcybineer
 
 #### Technologies Used
+  *	Scala 2.11.12
   *	Apache Spark 3.1.2
   *	Spark SQL
   *	MySQL 8.0.19
   *	YARN
   *	HDFS
   *	AWS EC2
-  *	SBT 1.5.4
-  *	Scala 2.11.12
+  *	SBT 1.5.4 
   *	Git + GitHub
   *	VS Code

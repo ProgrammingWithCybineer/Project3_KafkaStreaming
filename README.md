@@ -2,7 +2,7 @@
 
 This project will be used to create the followings:
   *	A Kafka Producer Application that will start producing random messages to a kafka topic
-  *	A Kafka Streams application that will consume messages from the previous Kafka topic and produce a new message to the output-topic.
+  *	A Kafka Streams application that will consume those messages from the previous Kafka topic and produce a new message to the output-topic.
 
 #### Contributors
   * 1Abdoul
